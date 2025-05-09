@@ -27,17 +27,6 @@ Whether it's a tree-planting simulator, flight-mile clicker, clothing impact cal
 
 ---
 
-## Sample Solutions
-
-As inspiration, this repository includes a sample solution built with Three.js and generative AI.  
-In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
-The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
-
-[🕹️ Click here to play the game](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
-*Fully browser-based, no registration required.*
-
----
-
 ## Use in Workshops & Trainings
 
 This game is ideal for:
@@ -48,6 +37,7 @@ This game is ideal for:
 
 👉 The **[participant guide (PDF)](./challenge/Anleitung%20-%20Vibe%20Coding%20Challenge%20(CO2%20Browser-Game).pdf)** explains how to create your own version of the game step-by-step using AI.
 
+---
 
 ## Submit Your Project
 
@@ -58,6 +48,17 @@ You can send your solution via email to info@deckeins.de with your game attached
 2. Create a folder under `/submissions/` with your name  
 3. Upload your solution (e.g. HTML file or full project folder)  
 4. Open a pull request – we'll review and merge!
+
+---
+
+## Sample Solutions
+
+As inspiration, this repository includes a sample solution built with Three.js and generative AI.  
+In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
+The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
+
+[🕹️ Click here to play the game](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+*Fully browser-based, no registration required.*
 
 ---
 
