@@ -70,8 +70,7 @@ You can send your solution via email to info@deckeins.de with your game attached
 ## License
 
 This project is licensed under the **MIT License**.  
-Feel free to use, adapt, and share it for educational purposes, coding events, or your own projects – just **give credit and link back to this repository**.
-(c) 2025 [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de)
+Feel free to use, adapt, and share it for educational purposes, coding events, or your own projects – just give credit to [Deckeins](https://www.deckeins.de) and [CaptainAI](https://www.captain-ai.de) and link back to this repository.
 
 ---
 
