@@ -7,8 +7,8 @@ This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www
 ![Sample Solution Screenshot](https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/cover.png)
 
 ## 🕹️ Play the Game  
-[Click here to play the sample solution](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
-(*Fully browser-based, no registration required.*)
+[Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+Fully browser-based, no registration required.
 
 ---
 
@@ -16,6 +16,7 @@ This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www
 
 The **VIBE Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
 
+---
 
 ## The Challenge
 
@@ -24,15 +25,18 @@ Design and develop a browser game that playfully shows how many trees a person i
 **There are no limits to creativity:**  
 Whether it's a tree-planting simulator, flight-mile clicker, clothing impact calculator or CO₂ quiz – everything is welcome that makes **knowledge experiential**.
 
+---
 
-## Sample Solution
+## Sample Solutions
 
 As inspiration, this repository includes a sample solution built with Three.js and generative AI.  
 In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
 The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
 
-➡️ [Try the Demo](https://dein-github-username.github.io/neutralize-me/demo/)
+[🕹️ Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+Fully browser-based, no registration required.
 
+---
 
 ## Repository Structure
 
