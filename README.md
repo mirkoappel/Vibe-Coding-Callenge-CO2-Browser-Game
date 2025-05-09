@@ -6,7 +6,7 @@ This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www
 
 ![Sample Solution Screenshot](https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/cover.png)
 
-**[🕹️ Play the Demos & Sample Solutions)](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
+## [🕹️ Play the Sample Solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
 (*Fully browser-based, no registration required.*)
 
 ---
