@@ -6,8 +6,8 @@ This repository is part of a Vibe Coding Challenge by [Deckeins](https://www.dec
 
 ![Sample Solution Screenshot](https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/cover.png)
 
-## 🕹️ Play the Game  
-[Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+## 🕹️ Play the Games  
+[Click here to play the games](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
 *Fully browser-based, no registration required.*
 
 ---
@@ -57,7 +57,7 @@ As inspiration, this repository includes a sample solution built with Three.js a
 In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
 The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
 
-[🕹️ Click here to play the game](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+[🕹️ Click here to play the games](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
 *Fully browser-based, no registration required.*
 
 ---
