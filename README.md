@@ -35,7 +35,7 @@ This game is ideal for:
 - AI-focused workshops (e.g. prompt engineering or “Vibe Coding” – software creation with AI)
 - Environmental education through gamification
 
-👉 The **[participant guide (PDF)](./challenge/Anleitung%20-%20Vibe%20Coding%20Challenge%20(CO2%20Browser-Game).pdf)** explains how to create your own version of the game step-by-step using AI.
+👉 The **[participant guide (PDF)](https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/tree/main/docs/guides)** explains how to create your own version of the game step-by-step using AI - demo prompts included
 
 ---
 
@@ -46,7 +46,7 @@ You can send your solution via email to info@deckeins.de with your game attached
 
 1. Fork this repository  
 2. Create a folder under `/submissions/` with your name  
-3. Upload your solution (e.g. HTML file or full project folder)  
+3. Upload your solution (e.g. the HTML file or full project folder)  
 4. Open a pull request – we'll review and merge!
 
 ---
@@ -64,9 +64,8 @@ The 3D world visually changes as progress is made – providing an **engaging an
 
 ## Repository Structure
 
-- [`/challenge/`](./challenge/) – Materials for trainers & participants (guide, briefing, starter code)
+- [`/docs/`](./docs/) – Project Website, Materials for trainers & participants (demos, guides, briefing, starter code)
 - [`/submissions/`](./submissions/) – Folder for participant submissions
-- [`index.html`](./index.html) – Demos & Sample Solutions
 - [`README.md`](./README.md) – This file
 
 ---
