@@ -1,4 +1,4 @@
-# 🌱 Neutralize Me – CO₂ Browser Game
+# 🌱 Vibe Coding Challange – CO₂ Browser Game
 
 An interactive 3D browser game that playfully demonstrates how many trees a person would need to plant to offset their own CO₂ footprint.
 
