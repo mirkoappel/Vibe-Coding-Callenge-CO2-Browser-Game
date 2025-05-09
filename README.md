@@ -4,18 +4,17 @@ An interactive 3D browser game that playfully demonstrates how many trees a pers
 
 This repository is part of a **VIBE Coding Challenge** by [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de) – open to developers, AI trainers, educators, and anyone interested in combining environmental education with creativity and artificial intelligence.
 
-## 🕹️ Live Demo (Sample Solution)
-
-**[Play the Demo]([https://dein-github-username.github.io/neutralize-me/demo/](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
+**[🕹️ Play the Demo](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
 (*Fully browser-based, no registration required.*)
 
+---
 
 ## Purpose of the Vibe Coding Challenge
 
 The **VIBE Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
 
 
-### The Challenge
+## The Challenge
 
 Design and develop a browser game that playfully shows how many trees a person in Germany would need to plant to offset their annual CO₂ emissions – or create another original approach that makes CO₂ impact and compensation tangible and interactive.
 
@@ -23,7 +22,7 @@ Design and develop a browser game that playfully shows how many trees a person i
 Whether it's a tree-planting simulator, flight-mile clicker, clothing impact calculator or CO₂ quiz – everything is welcome that makes **knowledge experiential**.
 
 
-### Sample Solution
+## Sample Solution
 
 As inspiration, this repository includes a sample solution built with Three.js and generative AI.  
 In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
