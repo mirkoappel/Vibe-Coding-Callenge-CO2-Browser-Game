@@ -4,6 +4,11 @@ An interactive 3D browser game that playfully demonstrates how many trees a pers
 
 This repository is part of a **VIBE Coding Challenge** by [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de) – open to developers, AI trainers, educators, and anyone interested in combining environmental education with creativity and artificial intelligence.
 
+## 🕹️ Live Demo (Sample Solution)
+
+**[Play the Demo]([https://dein-github-username.github.io/neutralize-me/demo/](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
+(*Fully browser-based, no registration required.*)
+
 ---
 
 ## Purpose of the Vibe Coding Challenge
@@ -52,14 +57,7 @@ This game is ideal for:
 
 ---
 
-## 🚀 Live Demo
-
-➡️ **[Play the Demo](https://dein-github-username.github.io/neutralize-me/demo/)**  
-(*Fully browser-based, no registration required.*)
-
----
-
-## 📤 Submit Your Project
+## Submit Your Project
 
 Want to share your game?
 You can send your solution via email to info@deckeins.de with your game attached, or:
@@ -71,18 +69,18 @@ You can send your solution via email to info@deckeins.de with your game attached
 
 ---
 
-## ✍️ Authors
+## Authors
 
 - [Mirko Appel](https://www.linkedin.com/in/mirko-appel/)
 - [Manuel Dingemann](https://www.linkedin.com/in/manuel-dingemann/)
-- (c) 2025 [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de)
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**.  
 Feel free to use, adapt, and share it for educational purposes, coding events, or your own projects – just **give credit and link back to this repository**.
+(c) 2025 [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de)
 
 ---
 
