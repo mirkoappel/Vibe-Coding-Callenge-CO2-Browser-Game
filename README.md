@@ -1,4 +1,4 @@
-# 🌱 Vibe Coding Challange – CO₂ Browser Game
+# Vibe Coding Challange – CO₂ Browser Game 🌱
 
 An interactive 3D browser game that playfully demonstrates how many trees a person would need to plant to offset their own CO₂ footprint.
 
@@ -6,22 +6,22 @@ This repository is part of a **VIBE Coding Challenge** by [Deckeins](https://www
 
 ---
 
-## 🎮 Purpose of the VIBE Coding Challenge
+## Purpose of the VIBE Coding Challenge
 
 The **VIBE Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
 
 ---
 
-### 💡 The Challenge
+### The Challenge
 
-> **Design and develop a browser game that playfully shows how many trees a person in Germany would need to plant to offset their annual CO₂ emissions – or create another original approach that makes CO₂ impact and compensation tangible and interactive.**
+**Design and develop a browser game that playfully shows how many trees a person in Germany would need to plant to offset their annual CO₂ emissions – or create another original approach that makes CO₂ impact and compensation tangible and interactive.**
 
 There are no limits to creativity:  
 🌳 Whether it's a tree-planting simulator, flight-mile clicker, clothing impact calculator or CO₂ quiz – everything is welcome that makes **knowledge experiential**.
 
 ---
 
-### 📌 Sample Solution: “Neutralize Me”
+### Sample Solution: “Neutralize Me”
 
 As inspiration, this repository includes a sample solution built with Three.js and generative AI.  
 In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
@@ -31,17 +31,16 @@ The 3D world visually changes as progress is made – providing an **engaging an
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 - [`/challenge/`](./challenge/) – Materials for participants (guide, briefing, starter code)
-- [`/demo/`](https://dein-github-username.github.io/neutralize-me/demo/) – Online demo of the sample solution (via GitHub Pages)
 - [`/submissions/`](./submissions/) – Folder for participant submissions
+- [`index.html`](./index.html) – Demo (Sample Solution)
 - [`README.md`](./README.md) – this file :)
-- [`Musterlösung (CO2 Browser Game).html`](./Musterlösung%20(CO2%20Browser%20Game).html) – full HTML version of the sample solution
 
 ---
 
-## 👨‍🏫 Use in Workshops & Trainings
+## Use in Workshops & Trainings
 
 This game is ideal for:
 
