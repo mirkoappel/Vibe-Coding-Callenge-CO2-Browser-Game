@@ -1,4 +1,4 @@
-# Vibe Coding Chellange – CO₂ Browser Game 🌱
+# Vibe Coding Challenge – CO₂ Browser Game 🌱
 
 Interactive 3D browser game that playfully demonstrates how many trees a person would need to plant to offset their own CO₂ footprint. 
 
