@@ -1,0 +1,191 @@
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Grundlegende FOUT-Prävention */
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 0.1s forwards; /* Leichte Verzögerung hinzugefügt */
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Verbesserte Standard-Zeilenhöhe für Absätze */
+p, li {
+    line-height: 1.7; /* Etwas großzügiger */
+}
+
+/* Konsistente Schriftstärken für Überschriften - Tailwind-Klassen überschreiben diese bei Bedarf */
+h1, h2 { font-weight: 800; } /* ExtraBold für Hauptüberschriften */
+h3 { font-weight: 700; } /* Bold für Unterüberschriften */
+h4, h5, h6 { font-weight: 600; } /* SemiBold für kleinere Überschriften */
+
+/* Button-Typografie und Basis-Styling */
+.btn {
+    display: inline-block; /* Stellt korrektes Spacing und Layout sicher */
+    font-weight: 600; /* SemiBold für Buttons */
+    letter-spacing: 0.025em;
+    padding: 0.65rem 1.5rem; /* Angepasstes Padding */
+    border-radius: 9999px; /* Vollständig abgerundet */
+    transition: all 0.2s ease-in-out;
+    text-decoration: none; /* Entfernt Unterstreichung von Anker-Buttons */
+    cursor: pointer;
+}
+.btn:hover {
+    transform: translateY(-2px); /* Subtiler Anhebe-Effekt */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Weicherer Schatten */
+}
+.btn-primary {
+    background-color: #10B981; /* Tailwind green-500 */
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #059669; /* Tailwind green-600 */
+}
+.btn-outline { /* Für Hero-Bereich */
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2); /* Optional: leicht dunklere Outline bei Hover */
+}
+.btn-secondary { /* Geändert von Blau zu Grün */
+    background-color: #059669; /* Tailwind green-600 */
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #047857; /* Tailwind green-700 */
+}
+
+/* Farbverlauf für Hero-Bereich - ANGEPASST */
+.hero-gradient {
+    /* Ein sanfterer, moderner Grüntonverlauf */
+    /*background: linear-gradient(to right bottom, #2f855a, #38a169, #48bb78, #68d391, #9ae6b4);*/
+    /* Alternativ ein etwas kräftigerer Verlauf:*/
+    background: linear-gradient(135deg, #276749 0%, #38A169 50%, #68D391 100%);
+    
+}
+/* Hintergrund für abwechselnde Abschnitte */
+.section-bg {
+    background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+/* Karten-Styling */
+.card {
+    background-color: white;
+    border-radius: 0.75rem; /* Tailwind rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04); /* Weicherer Schatten */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+}
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1.5rem; /* Tailwind p-6 */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-title { /* Diese Klasse wird mit h4 verwendet */
+    font-size: 1.25rem; /* Tailwind text-xl */
+    margin-bottom: 0.5rem; /* Tailwind mb-2 */
+    color: #1f2937; /* gray-800 */
+}
+.card-author {
+    font-size: 0.875rem; /* Tailwind text-sm */
+    color: #4b5563; /* Tailwind text-gray-600 */
+    margin-bottom: 0.75rem; /* Tailwind mb-3 */
+    font-weight: 500; /* Medium */
+}
+.card-description {
+    font-size: 1rem; /* Tailwind text-base */
+    color: #374151; /* Tailwind text-gray-700 */
+    line-height: 1.65; /* Gut für Lesbarkeit */
+    flex-grow: 1;
+    margin-bottom: 1rem; /* Stellt Abstand vor Button sicher */
+}
+
+/* Code-Block Styling */
+code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem; /* Tailwind rounded-md */
+    color: #be123c; /* Tailwind rose-700 für Kontrast */
+}
+
+/* --- Mobile Menu Styling --- */
+/* These classes are placeholders based on common practices. Adapt them to your HTML structure and specific needs. */
+
+/* Adjust Hero Headline on small screens */
+@media (max-width: 767px) { /* Typical breakpoint for small screens */
+    .hero-gradient h1 {
+    /* Hide desktop menu on small screens */
+    .md\:flex {
+ display: none;
+    }
+}
+@media (min-width: 768px) {
+    .mobile-menu-toggle,
+ #mobile-menu {
+        display: none;
+    }
+}
+
+/* Mobile menu is hidden by default on all screen sizes when it has the 'hidden' class */
+#mobile-menu.hidden {
+    display: none !important;
+}
+
+#mobile-menu:not(.hidden) {
+    height: 100vh !important; /* Full height of the viewport */
+    position: fixed !important; /* Overlay content */
+    top: 0 !important;
+ left: 0 !important;
+    background-color: #ffffff !important; /* White background (adjust color as needed) */
+    flex-direction: column !important; /* Stack items vertically */
+    width: 100% !important; /* Full width */
+}
+/* Code-Block Styling */
+code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9em;
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem; /* Tailwind rounded-md */
+    color: #be123c; /* Tailwind rose-700 für Kontrast */
+}
+
+/* Mobile menu styles when it does NOT have the 'hidden' class (toggled by JS) */
+
+#mobile-menu:not(.hidden) {
+ display: flex !important; /* Use flexbox for centering */
+    justify-content: center !important; /* Center items vertically */
+    align-items: center !important; /* Center items horizontally */
+}
+
+#mobile-menu:not(.hidden) a { /* Target links directly inside #mobile-menu */
+        font-size: 1.8rem !important; /* Increase font size */
+        padding: 1rem 0 !important; /* Add vertical padding */
+}
+
+/* Adjust styling for the GitHub button specifically in the mobile menu */
+#mobile-menu:not(.hidden) a.bg-green-600 {
+    font-size: unset !important; /* Reset font size */
+    padding: 0.75rem 1.5rem !important; /* Increase horizontal and vertical padding */
+    margin-top: 1.5rem !important; /* Add top margin */
+}

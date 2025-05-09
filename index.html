@@ -1,496 +1,337 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neutralize Me - CO₂ Game</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            overflow: hidden; /* Verhindert Scrollbalken durch Canvas */
-        }
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            display: block;
-        }
-        .hud {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 10;
-            min-width: 250px;
-        }
-        .hud h2 {
-            margin-top: 0;
-            font-size: 1.2em;
-            color: #2c3e50;
-        }
-        #co2-display {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #2980b9;
-            margin-bottom: 10px;
-        }
-        #co2-progress-bar-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            height: 20px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-        #co2-progress-bar {
-            width: 100%; /* Startet voll */
-            height: 100%;
-            background-color: #e74c3c; /* Rot, wird grünlich */
-            transition: width 0.5s ease-out, background-color 0.5s ease-out;
-        }
-        #infobox {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 10;
-            max-width: 350px;
-        }
-        #infobox-toggle {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        #infobox-toggle:hover {
-            background-color: #2980b9;
-        }
-        #infobox-content {
-            font-size: 0.85em;
-            line-height: 1.5;
-            display: none; /* Standardmäßig geschlossen */
-        }
-        #reset-button {
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            display: block;
-            margin-top: 10px;
-        }
-        #reset-button:hover {
-            background-color: #d35400;
-        }
-        #win-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(46, 204, 113, 0.9);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            font-size: 2em;
-            text-align: center;
-            z-index: 20;
-            display: none; /* Standardmäßig versteckt */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .cursor-preview {
-            position: absolute;
-            width: 30px; /* Größe der Vorschau anpassen */
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(0, 255, 0, 0.3);
-            border: 2px dashed rgba(0, 128, 0, 0.7);
-            pointer-events: none; /* Wichtig, damit Klicks durchgehen */
-            transform: translate(-50%, -50%);
-            z-index: 5;
-            display: none; /* Standardmäßig versteckt */
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>CO2 Game Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="website/style.css">
 </head>
-<body>
-    <div id="game-container"></div>
+<body class="bg-white text-gray-700">
 
-    <div class="hud">
-        <h2>CO₂-Fußabdruck</h2>
-        <div id="co2-display">12000 kg</div>
-        <div id="co2-progress-bar-container">
-            <div id="co2-progress-bar"></div>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Placeholder for Logo -->
+ <a href="#" class="flex items-center">
+ <span class="text-2xl font-bold text-green-600 mr-3">🌱</span>
+ <span class="text-2xl font-bold text-green-600 hover:text-green-700">CO2 Game Challenge</span>
+ </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-4">
+ <a href="#gallery" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Games Gallery</a>
+ <a href="#challenge" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">The Challenge</a>
+ <a href="#submit" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Submit your Game</a>
+ <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank" class="ml-4 inline-block bg-green-600 text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+ GitHub
+ </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+ <!-- Hamburger Icon -->
+ <button id="mobile-menu-button" class="text-gray-600 hover:text-green-600 focus:outline-none p-2">
+ <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+ <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+ </svg>
+ </button>
+
+
+            </div>
         </div>
-        <button id="reset-button">Spiel zurücksetzen</button>
-    </div>
+    </nav>
 
-    <div id="infobox">
-        <button id="infobox-toggle">Warum das wichtig ist</button>
-        <div id="infobox-content">
-            Ein durchschnittlicher Mensch in Deutschland verursacht ca. 12 Tonnen CO₂ pro Jahr. Jeder Baum bindet davon etwa 20 kg. Du kannst dir deine eigene CO₂-Kompensation sichtbar machen – mit jedem Klick!
-            <br><br>
-            Bäume nehmen CO₂ aus der Atmosphäre auf und speichern den Kohlenstoff im Holz, während sie Sauerstoff freisetzen. Dies hilft, den Treibhauseffekt zu mildern.
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-x-0 top-0 bg-white shadow-lg py-6 px-6 z-40 hidden">
+ <div class="flex flex-col items-center space-y-4 pt-12"> <!-- Added padding top to avoid overlapping with header -->
+ <a href="#gallery" class="text-gray-800 hover:text-green-600 text-lg font-medium">Games Gallery</a>
+ <a href="#challenge" class="text-gray-800 hover:text-green-600 text-lg font-medium">The Challenge</a>
+ <a href="#submit" class="text-gray-800 hover:text-green-600 text-lg font-medium">Submit your Game</a>
+ <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank" class="inline-block bg-green-600 text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-green-700 transition duration-300 mt-4">
+ GitHub
+ </a>
         </div>
-    </div>
+    </div>    <!-- Hero Section -->
+    <header class="hero-gradient text-white pt-16 pb-16 md:pt-16 md:pb-24">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-3xl mb-8 font-bold">Vibe Coding Challange</p>
+            <h1 class="text-5xl leading-tight sm:text-5xl md:text-6xl mb-6 font-extrabold md:leading-tight">Visualize Your CO₂ Footprint <br> with AI-Games</h1>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                Leverage AI to develop an interactive 3D browser game that playfully explores the concept of the CO₂ footprint and ways to compensate or reduce it.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#gallery" class="btn btn-outline" style="background-color: white; color: #1f2937;">🕹️ Play the games</a>
+                <a href="#challenge" class="btn btn-outline">Join the Challenge</a>
+            </div>
+        </div> 
+    </header>
 
-    <div id="win-message">
-        🎉 CO₂ Neutralisiert! 🎉<br>
-        Gut gemacht!
-    </div>
+    <!-- Games Gallery Section -->
+    <section id="gallery" class="py-16 md:py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl mb-4 font-bold text-gray-800">Explore the Games</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
+                    Check out the starter template to begin your journey, or get inspired by games created by our community.
+                </p>
+            </div>
 
-    <div class="cursor-preview" id="cursor-preview"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+ <img src="./submissions/starter-template/screenshot.png" alt="Starter Template Screenshot" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                    <div class="card-content">
+                        <h4 class="card-title font-semibold">Starter Template</h4>
+                        <p class="card-author">By: Gemini Pro</p>
+                        <p class="card-description mb-4">
+                            This is the official starter template. Fork it, get inspired, and build your own unique CO₂ compensation game!
+                        </p>
+ <a href="./submissions/starter-template/index.html" target="_blank" class="btn btn-primary mt-auto self-start">Play Game</a>
+                    </div>
+                </div>
 
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-            }
-        }
-    </script>
+                <div class="card">
+ <img src="./submissions/manuel-dingemann/screenshot.png" alt="Manuel Dingemann's Submission Screenshot" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                    <div class="card-content">
+                        <h4 class="card-title font-semibold">Manuel's CO₂ Forest</h4>
+                        <p class="card-author">By: Manuel Dingemann</p>
+                        <p class="card-description mb-4">
+                            Watch a vibrant forest grow as you click to plant trees and neutralize your CO₂ footprint. A meditative experience.
+                        </p>
+ <a href="./submissions/manuel-dingemann/index.html" target="_blank" class="btn btn-primary mt-auto self-start">Play Game</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+ <img src="./submissions/mirko-appel/screenshot.png" alt="Mirko Appel's Submission Screenshot" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/333333?text=Image+Not+Found';">
+                     <div class="card-content">
+                        <h4 class="card-title font-semibold">Mirko's Eco Planter</h4>
+                        <p class="card-author">By: Mirko Appel</p>
+                        <p class="card-description mb-4">
+                            An interactive take on tree planting, showing the direct impact of each tree on CO₂ levels.
+                        </p>
+ <a href="./submissions/mirko-appel/index.html" target="_blank" class="btn btn-primary mt-auto self-start">Play Game</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    <!-- About Section -->
+    <section id="challenge" class="py-16 md:py-20 section-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl mb-4 font-bold text-gray-800">The Challenge</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    The Vibe Coding Challenge invites you to develop your own browser game with the help of AI. Explore creatively how large our CO₂ footprint is – and how we can reduce or even neutralize it.
+                </p>
+            </div>
 
-        let scene, camera, renderer, controls;
-        let terrain, skyMaterial;
-        let raycaster, mouse;
-        const plantedTrees = [];
-
-        const INITIAL_CO2 = 12000; // kg
-        const CO2_PER_TREE = 20; // kg
-        let currentCO2 = INITIAL_CO2;
-        let gameWon = false;
-
-        // UI Elements
-        const co2Display = document.getElementById('co2-display');
-        const co2ProgressBar = document.getElementById('co2-progress-bar');
-        const infoboxToggle = document.getElementById('infobox-toggle');
-        const infoboxContent = document.getElementById('infobox-content');
-        const resetButton = document.getElementById('reset-button');
-        const winMessage = document.getElementById('win-message');
-        const cursorPreview = document.getElementById('cursor-preview');
-
-        init();
-        animate();
-
-        function init() {
-            // Scene
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x87CEEB); // Start-Himmelfarbe (blauer Himmel)
-            scene.fog = new THREE.Fog(0xaaaaaa, 50, 200); // Start-Nebel
-
-            // Camera
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.set(20, 20, 20);
-            camera.lookAt(0, 0, 0);
-
-            // Renderer
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.shadowMap.enabled = true;
-            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            document.getElementById('game-container').appendChild(renderer.domElement);
-
-            // Controls
-            controls = new OrbitControls(camera, renderer.domElement);
-            controls.enablePan = false; // Wie gewünscht
-            controls.maxPolarAngle = Math.PI / 2 - 0.1; // Verhindert, unter den Boden zu schauen
-            controls.minDistance = 10;
-            controls.maxDistance = 80;
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.05;
-
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-            scene.add(ambientLight);
-
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-            directionalLight.position.set(50, 50, 30);
-            directionalLight.castShadow = true;
-            directionalLight.shadow.mapSize.width = 2048;
-            directionalLight.shadow.mapSize.height = 2048;
-            directionalLight.shadow.camera.near = 0.5;
-            directionalLight.shadow.camera.far = 200;
-            directionalLight.shadow.camera.left = -50;
-            directionalLight.shadow.camera.right = 50;
-            directionalLight.shadow.camera.top = 50;
-            directionalLight.shadow.camera.bottom = -50;
-            scene.add(directionalLight);
-            // const shadowHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
-            // scene.add(shadowHelper);
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start"> 
+                <div>
+                    <h3 class="text-2xl font-semibold mb-3">What is "Vibe Coding"?</h3>
+                    <p class="mb-8 text-gray-700 leading-relaxed"> 
+                        "Vibe Coding" is a creative approach to software development where you use the power of AI tools to brainstorm, prototype, and build digital ideas – quickly, intuitively, and with a good dose of fun. It's about bringing your vision to life with AI as your co-creator.
+                    </p>
+                    <h3 class="text-2xl font-semibold mb-3">Your Mission</h3>
+                    <p class="mb-8 text-gray-800 leading-relaxed">
+                        Develop a browser game that makes the impact of CO₂ and methods of compensation tangible and interactive through play.
+                    </p>
+                    <h3 class="text-2xl font-semibold mb-3">There are no limits to creativity</h3>
+                    <p class="mb-8 text-gray-800 leading-relaxed">
+                        Whether it's a tree-planting simulator, flight-mile clicker, clothing impact calculator, or CO₂ quiz – everything is welcome that makes knowledge experiential.
+                    </p>
+                </div>
+                <div class="p-6 md:p-8 bg-green-50 rounded-lg shadow-lg border border-green-200"> 
+                    <h3 class="text-green-700 text-2xl font-semibold mb-6">Key Aspects:</h3> 
+                    <ul class="space-y-4 text-gray-700 leading-relaxed"> 
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 mr-3 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.59-.477-1.067-1.066-1.067H6.53c-.59 0-1.066.477-1.066 1.067v11.826c0 .59.477 1.067 1.066 1.067h6.655c.59 0 1.066-.477 1.066-1.067V6.087Z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087h3.199c.59 0 1.066.477 1.066 1.067v8.533c0 .59-.477 1.067-1.066 1.067h-3.2Z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75h3M9 15.75h3M6.75 12.75h.008v.008H6.75v-.008Zm0 3h.008v.008H6.75v-.008Zm0 3h.008v.008H6.75v-.008Z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-semibold text-green-800">Educate Playfully:</span> Convey CO₂ impact and neutralization.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 mr-3 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-7.5h12Z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-semibold text-green-800">AI-Powered Development:</span> Use AI tools (like Gemini, ChatGPT) for brainstorming, coding, and asset creation.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 mr-3 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5 0-4.5 16.5" />
+                                </svg>
+                            </span>
+                            <span><span class="font-semibold text-green-800">Technology:</span> HTML, JavaScript, CSS and Three.js for 3D, but open to other web technologies.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 mr-3 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                                </svg>
+                            </span>
+                            <span><span class="font-semibold text-green-800">Interactive Experience:</span> Engage users with a browser game or experience.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 mr-3 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-semibold text-green-800">Goal:</span> Foster understanding and inspire action towards sustainability.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-            // Terrain
-            const terrainSize = 100;
-            const terrainSegments = 50;
-            const terrainGeometry = new THREE.PlaneGeometry(terrainSize, terrainSize, terrainSegments, terrainSegments);
-            terrainGeometry.rotateX(-Math.PI / 2);
+    <!-- Ideal for Workshops Section -->
+    <section class="py-16 md:py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl mb-4 font-bold text-gray-800">Perfect for Workshops & Trainings</h2>
+            <p class="text-lg text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto font-medium leading-relaxed"> 
+                This game concept and challenge are ideal for various educational and collaborative settings.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+ <img src="website/icons/brain.svg" alt="Brain Icon" class="w-12 h-12 text-green-500 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Hackathons & Challenges</h3>
+                    <p class="text-gray-700 leading-relaxed">Engage participants in climate or sustainability-themed coding events.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+ <img src="website/icons/network.svg" alt="Network Icon" class="w-12 h-12 text-green-500 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">AI-Focused Workshops</h3>
+                    <p class="text-gray-700 leading-relaxed">Teach prompt engineering or "Vibe Coding" – software creation with AI.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+ <img src="website/icons/leave.svg" alt="Leaf Icon" class="w-12 h-12 text-green-500 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Environmental Education</h3>
+                    <p class="text-gray-700 leading-relaxed">Make learning about CO₂ impact interactive and fun through gamification.</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/raw/main/challenge/Anleitung%20-%20Vibe%20Coding%20Challenge%20(CO2%20Browser-Game).pdf" target="_blank" class="btn btn-secondary">
+                    👉 Get the Participant Guide (PDF)
+                </a>
+                <p class="mt-4 text-sm text-gray-500">Explains how to create your own version step-by-step using AI.</p>
+            </div>
+        </div>
+    </section>
 
-            const positions = terrainGeometry.attributes.position;
-            for (let i = 0; i < positions.count; i++) {
-                const y = Math.sin(positions.getX(i) * 0.1 + Math.random() * 0.5) * 2 + Math.cos(positions.getZ(i) * 0.08 + Math.random() * 0.5) * 2;
-                positions.setY(i, y + Math.random() * 0.5); // Kleine zufällige Hügel
-            }
-            terrainGeometry.computeVertexNormals();
+    <!-- How to Participate Section -->
+    <section id="submit" class="py-16 md:py-20 section-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl mb-4 font-bold text-gray-800">Ready to Share Your Game?</h2>
+            <p class="text-lg text-gray-600 mb-10 md:mb-12 max-w-xl mx-auto font-medium leading-relaxed">
+                We're excited to see what you create! Submit your solution and contribute to a growing library of impactful games.
+            </p>
+            <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-xl border border-gray-200">
+                <h3 class="text-2xl text-green-600 font-semibold mb-6">How to Submit:</h3>
+                <p class="mb-6 text-gray-700 leading-relaxed text-left sm:text-center">
+                    You can send your solution via email to <a href="mailto:info@deckeins.de" class="text-green-600 hover:underline font-medium">info@deckeins.de</a> with your game attached, or follow these steps on GitHub:
+                </p>
+                <ol class="list-decimal list-inside text-left space-y-3 text-gray-700 leading-relaxed">
+                    <li><strong>Fork this repository:</strong> <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank" class="text-green-600 hover:underline font-medium">Click here to fork</a>.</li>
+                    <li><strong>Create a folder:</strong> Under <code class="text-sm">/submissions/</code> with your name (e.g., <code class="text-sm">/submissions/your-name/</code>).</li>
+                    <li><strong>Upload your solution:</strong> Add your HTML file or full project folder to your new directory. Don't forget a <code class="text-sm">screenshot.png</code>!</li>
+                    <li><strong>Open a pull request:</strong> We'll review and merge your awesome creation!</li>
+                </ol>
+                <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/pulls" target="_blank" class="btn btn-primary mt-10">
+                    Create a Pull Request
+                </a>
+            </div>
+        </div>
+    </section>
 
-            const terrainMaterial = new THREE.MeshStandardMaterial({
-                color: 0x55aa55, // Grünlich
-                flatShading: false, // true für Low Poly, false für weicher
-                roughness: 0.8,
-                metalness: 0.2
+    <!-- Brought to You By Section -->
+    <section class="py-16 md:py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl mb-4 font-bold text-gray-800">Brought to You By</h2>
+            <p class="text-lg text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+                This challenge is a collaborative initiative by <a href="https://www.deckeins.de">Deckeins</a> and <a href="https://captain-ai.de/">CaptainAI</a>, dedicated to leveraging technology for positive change and enabling others to do the same.
+            </p>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 text-center">
+                    <a href="https://www.deckeins.de" target="_blank" class="text-3xl font-bold text-green-600 hover:text-green-700 inline-block mb-6">Deckeins</a>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Enabling organizations to use Artificial Intelligence responsibly, effectively, and human-centered for societal and environmental good.</p>
+                    <p class="italic text-sm text-gray-600 font-medium">"Effecting positive change with AI. For a future worth living."</p>
+                    <a href="https://www.deckeins.de/" target="_blank" class="btn btn-primary mt-8 self-start">More infos</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 text-center">
+                     <a href="https://captain-ai.de/" target="_blank" class="text-3xl font-bold text-green-600 hover:text-green-700 inline-block mb-6">CaptainAI</a>
+                     <p class="text-gray-700 mb-4 leading-relaxed">Specializing in AI-powered workflow automation with a focus on purpose-driven organizations, helping teams increase their impact.</p>
+                     <p class="italic text-sm text-gray-600 font-medium">"Automating for Impact. Empowering Missions."</p>
+                     <a href="https://captain-ai.de/" target="_blank" class="btn btn-primary mt-8 self-start">More infos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+            <div class="md:col-span-1">
+                <p class="text-lg font-semibold text-green-400 leading-relaxed md:text-left text-center">
+                    For a future worth living.<br> Powered by AI.
+                </p>
+            </div>
+            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left md:pl-12">
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Content</h4>
+                    <ul class="space-y-2 text-sm">
+ <li><a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/raw/main/challenge/Anleitung%20-%20Vibe%20Coding%20Challenge%20(CO2%20Browser-Game).pdf" target="_blank" class="hover:text-white">Participant Guide</a></li>
+                        <li><a href="#gallery" class="hover:text-white">Games Gallery</a></li>
+                        <li><a href="#challenge" class="hover:text-white">The Challenge</a></li>
+ <li><a href="#submit" class="hover:text-white">Submit</a></li>
+                    </ul>
+                </div>
+                <div>
+ <h4 class="text-white font-semibold mb-3">Partners</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.deckeins.de" target="_blank" class="hover:text-white">Deckeins</a></li>
+                        <li><a href="https://captain-ai.de/" target="_blank" class="hover:text-white">CaptainAI</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-white font-semibold mb-3">Legal</h4>
+                     <ul class="space-y-2 text-sm">
+                         <li><a href="website/imprint.html" class="hover:text-white">Imprint</a></li>
+ <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                     </ul>
+                </div>
+            </div>
+            <p class="mt-6 text-xs text-gray-500">&copy; 2024 Deckeins & CaptainAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Optional: Close menu when a link is clicked
+        // Exclude the GitHub button from auto-closing the menu, adjust selector if needed
+        mobileMenu.querySelectorAll('a:not(.inline-block.bg-green-600)').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
-            terrain = new THREE.Mesh(terrainGeometry, terrainMaterial);
-            terrain.receiveShadow = true;
-            scene.add(terrain);
-
-            // Skybox (optional, aber nett für Lichtveränderung)
-            // Hier einfach eine Farbe, könnte komplexer sein
-            // Wir steuern die Nebelfarbe und Hintergrundfarbe für den Smog-Effekt
-
-            // Raycaster
-            raycaster = new THREE.Raycaster();
-            mouse = new THREE.Vector2();
-
-            // Event Listeners
-            renderer.domElement.addEventListener('click', onMouseClick, false);
-            renderer.domElement.addEventListener('mousemove', onMouseMove, false);
-            renderer.domElement.addEventListener('mouseleave', () => { cursorPreview.style.display = 'none'; });
-
-
-            infoboxToggle.addEventListener('click', () => {
-                infoboxContent.style.display = infoboxContent.style.display === 'none' ? 'block' : 'none';
-            });
-            resetButton.addEventListener('click', resetGame);
-
-            window.addEventListener('resize', onWindowResize, false);
-
-            updateCO2Display();
-            updateEnvironment();
-        }
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function onMouseMove(event) {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-            raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObject(terrain);
-
-            if (intersects.length > 0 && currentCO2 > 0) {
-                cursorPreview.style.display = 'block';
-                cursorPreview.style.left = `${event.clientX}px`;
-                cursorPreview.style.top = `${event.clientY}px`;
-            } else {
-                cursorPreview.style.display = 'none';
-            }
-        }
-
-        function onMouseClick(event) {
-            if (gameWon) return;
-
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-            raycaster.setFromCamera(mouse, camera);
-            const intersects = raycaster.intersectObject(terrain);
-
-            if (intersects.length > 0) {
-                const point = intersects[0].point;
-                // Erhöhe y-Position leicht, damit Baum nicht im Boden versinkt
-                point.y += 0.1; 
-                plantTree(point);
-            }
-        }
-
-        function plantTree(position) {
-            if (currentCO2 <= 0) return;
-
-            const tree = createStylizedTree();
-            tree.position.copy(position);
-            tree.castShadow = true;
-            tree.receiveShadow = true;
-            tree.children.forEach(child => {
-                child.castShadow = true;
-                // child.receiveShadow = true; // Stämme werfen meist keinen Schatten auf sich selbst
-            });
-            
-            scene.add(tree);
-            plantedTrees.push(tree);
-
-            // Wachstumsanimation
-            tree.scale.set(0.1, 0.1, 0.1);
-            const targetScale = new THREE.Vector3(1, 1, 1);
-            // Simple Tweening (könnte man mit TWEEN.js schöner machen)
-            function grow() {
-                tree.scale.lerp(targetScale, 0.1);
-                if (tree.scale.x < 0.99) {
-                    requestAnimationFrame(grow);
-                } else {
-                    tree.scale.copy(targetScale); // Ensure it's exactly 1
-                }
-            }
-            grow();
-
-            currentCO2 -= CO2_PER_TREE;
-            currentCO2 = Math.max(0, currentCO2);
-            updateCO2Display();
-            updateEnvironment();
-
-            if (currentCO2 <= 0) {
-                gameWon = true;
-                winMessage.style.display = 'block';
-                cursorPreview.style.display = 'none';
-            }
-        }
-
-        function createStylizedTree() {
-            const group = new THREE.Group();
-
-            // Stamm
-            const trunkHeight = 1.5 + Math.random() * 1;
-            const trunkRadius = 0.2 + Math.random() * 0.1;
-            const trunkGeometry = new THREE.CylinderGeometry(trunkRadius * 0.7, trunkRadius, trunkHeight, 8);
-            const trunkMaterial = new THREE.MeshStandardMaterial({
-                color: new THREE.Color(0x8B4513).lerp(new THREE.Color(0xA0522D), Math.random()), // Variation in Braun
-                roughness: 0.9,
-                metalness: 0.1
-            });
-            const trunk = new THREE.Mesh(trunkGeometry, trunkMaterial);
-            trunk.position.y = trunkHeight / 2;
-            group.add(trunk);
-
-            // Krone
-            const crownRadius = 1 + Math.random() * 0.5;
-            // Einfache Kugelkrone oder Icosaeder für mehr Low-Poly-Look
-            // const crownGeometry = new THREE.SphereGeometry(crownRadius, 8, 6); 
-            const crownGeometry = new THREE.IcosahedronGeometry(crownRadius, Math.random() < 0.5 ? 0 : 1); // 0 für spitzer, 1 für runder
-            
-            const crownColors = [0x2E8B57, 0x3CB371, 0x228B22, 0x006400]; // Verschiedene Grüntöne
-            const crownMaterial = new THREE.MeshStandardMaterial({
-                color: crownColors[Math.floor(Math.random() * crownColors.length)],
-                roughness: 0.8,
-                metalness: 0.1
-            });
-            const crown = new THREE.Mesh(crownGeometry, crownMaterial);
-            crown.position.y = trunkHeight + crownRadius * 0.7; // Krone auf den Stamm setzen
-            group.add(crown);
-            
-            // Optionale weitere Kronenteile für buschigeres Aussehen
-            if (Math.random() < 0.5) {
-                const subCrownRadius = crownRadius * (0.5 + Math.random() * 0.3);
-                const subCrownGeometry = new THREE.IcosahedronGeometry(subCrownRadius, 0);
-                const subCrown = new THREE.Mesh(subCrownGeometry, crownMaterial); // Gleiches Material für Konsistenz
-                subCrown.position.set(
-                    (Math.random() - 0.5) * crownRadius * 0.5,
-                    trunkHeight + crownRadius * 0.5 + (Math.random() - 0.5) * subCrownRadius * 0.5,
-                    (Math.random() - 0.5) * crownRadius * 0.5
-                );
-                group.add(subCrown);
-            }
-
-
-            // Zufällige leichte Neigung
-            group.rotation.x += (Math.random() - 0.5) * 0.1;
-            group.rotation.z += (Math.random() - 0.5) * 0.1;
-            
-            // Zufällige Größe
-            const randomScale = 0.8 + Math.random() * 0.4;
-            // Skalierung wird von der Wachstumsanimation gesteuert, hier nicht direkt setzen
-            // group.scale.set(randomScale, randomScale, randomScale);
-
-            return group;
-        }
-
-        function updateCO2Display() {
-            co2Display.textContent = `${currentCO2.toLocaleString()} kg`;
-            const progress = (INITIAL_CO2 - currentCO2) / INITIAL_CO2; // Wie viel ist schon reduziert
-            co2ProgressBar.style.width = `${(1 - progress) * 100}%`;
-
-            // Farbwechsel für Fortschrittsbalken
-            // Geht von Rot (100% CO2) zu Grün (0% CO2)
-            // HSL: Hue 0 (rot) to 120 (grün)
-            const hue = (1 - progress) * 120; // 120 = Grün, 0 = Rot
-            co2ProgressBar.style.backgroundColor = `hsl(${hue}, 70%, 50%)`;
-        }
-        
-        function updateEnvironment() {
-            const progress = (INITIAL_CO2 - currentCO2) / INITIAL_CO2; // 0 = start, 1 = ziel erreicht
-
-            // Himmel heller/klarer
-            const startSkyColor = new THREE.Color(0xaaaaaa); // Smoggy
-            const endSkyColor = new THREE.Color(0x87CEEB);   // Klar
-            scene.background.lerpColors(startSkyColor, endSkyColor, progress);
-
-            // Nebel reduziert sich
-            const startFogNear = 20;
-            const startFogFar = 100;
-            const endFogNear = 100;
-            const endFogFar = 300;
-            
-            scene.fog.near = startFogNear + (endFogNear - startFogNear) * progress;
-            scene.fog.far = startFogFar + (endFogFar - startFogFar) * progress;
-            scene.fog.color.copy(scene.background); // Nebelfarbe an Himmelfarbe anpassen
-        }
-
-
-        function resetGame() {
-            currentCO2 = INITIAL_CO2;
-            gameWon = false;
-            winMessage.style.display = 'none';
-
-            // Bäume entfernen
-            plantedTrees.forEach(tree => {
-                // Geometrie und Material freigeben
-                tree.traverse(child => {
-                    if (child.isMesh) {
-                        if (child.geometry) child.geometry.dispose();
-                        if (child.material) {
-                            if (Array.isArray(child.material)) {
-                                child.material.forEach(mat => mat.dispose());
-                            } else {
-                                child.material.dispose();
-                            }
-                        }
-                    }
-                });
-                scene.remove(tree);
-            });
-            plantedTrees.length = 0; // Array leeren
-
-            updateCO2Display();
-            updateEnvironment(); // Setzt Himmel und Nebel zurück
-            controls.reset(); // Kamera zurücksetzen
-            camera.position.set(20, 20, 20);
-            camera.lookAt(0, 0, 0);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update(); // Nur wenn enableDamping oder autoRotate = true
-            renderer.render(scene, camera);
-        }
-
+        });
     </script>
 </body>
 </html>
