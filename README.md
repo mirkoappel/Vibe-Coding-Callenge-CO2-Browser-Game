@@ -35,9 +35,9 @@ The 3D world visually changes as progress is made – providing an **engaging an
 
 ## Repository Structure
 
-- [`/challenge/`](./challenge/) – Materials for participants (guide, briefing, starter code)
+- [`/challenge/`](./challenge/) – Materials for trainers & participants (guide, briefing, starter code)
 - [`/submissions/`](./submissions/) – Folder for participant submissions
-- [`index.html`](./index.html) – Demo (Sample Solution)
+- [`index.html`](./index.html) – Demos & Sample Solutions
 - [`README.md`](./README.md) – this file :)
 
 
