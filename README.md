@@ -8,7 +8,7 @@ This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www
 
 ## 🕹️ Play the Game  
 [Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
-Fully browser-based, no registration required.
+*Fully browser-based, no registration required.*
 
 ---
 
@@ -34,17 +34,9 @@ In this game, players click to plant trees and reduce a CO₂ meter from 12,000�
 The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
 
 [🕹️ Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
-Fully browser-based, no registration required.
+*Fully browser-based, no registration required.*
 
 ---
-
-## Repository Structure
-
-- [`/challenge/`](./challenge/) – Materials for trainers & participants (guide, briefing, starter code)
-- [`/submissions/`](./submissions/) – Folder for participant submissions
-- [`index.html`](./index.html) – Demos & Sample Solutions
-- [`README.md`](./README.md) – this file :)
-
 
 ## Use in Workshops & Trainings
 
@@ -67,12 +59,23 @@ You can send your solution via email to info@deckeins.de with your game attached
 3. Upload your solution (e.g. HTML file or full project folder)  
 4. Open a pull request – we'll review and merge!
 
+---
+
+## Repository Structure
+
+- [`/challenge/`](./challenge/) – Materials for trainers & participants (guide, briefing, starter code)
+- [`/submissions/`](./submissions/) – Folder for participant submissions
+- [`index.html`](./index.html) – Demos & Sample Solutions
+- [`README.md`](./README.md) – This file
+
+---
 
 ## Authors
 
 - [Mirko Appel](https://www.linkedin.com/in/mirko-appel/)
 - [Manuel Dingemann](https://www.linkedin.com/in/manuel-dingemann/)
 
+---
 
 ## License
 
