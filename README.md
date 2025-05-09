@@ -4,7 +4,7 @@ An interactive 3D browser game that playfully demonstrates how many trees a pers
 
 This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de) – open to AI trainers, educators, developers and anyone interested in combining environmental education with creativity and artificial intelligence.
 
-**[🕹️ Play the Demo](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
+**[🕹️ Play the Demo (Sample Solution)](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
 (*Fully browser-based, no registration required.*)
 
 ---
