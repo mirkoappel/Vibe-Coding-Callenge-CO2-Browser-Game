@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,140 +12,184 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 </head>
+
 <body class="bg-white text-gray-700 font-sans">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="../index.html" class="text-2xl font-bold text-green-600 hover:text-green-700 flex items-center">
-                <span class="ml-2">CO2 Game Challenge</span>
-            </a>
-            <div>
-                <a href="../index.html#gallery" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Games</a>
-                <a href="../index.html#challenge" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">The Challenge</a>
-                <a href="../index.html#submit" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Submit</a>
-                <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">GitHub</a>
+            <div class="flex items-center">
+                <!-- Placeholder for Logo -->
+                <a href="/" class="flex items-center">
+                    <span class="text-2xl font-bold text-green-600 mr-3">🌱</span>
+                    <span class="text-2xl font-bold text-green-600 hover:text-green-700">CO2 Game Challenge</span>
+                </a>
+            </div>
 
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#gallery" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Games
+                    Gallery</a>
+                <a href="#challenge" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">The
+                    Challenge</a>
+                <a href="#submit" class="text-gray-600 hover:text-green-600 px-4 py-2 text-sm font-medium">Submit your
+                    Game</a>
+                <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank"
+                    class="ml-4 inline-block bg-green-600 text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                    GitHub
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <!-- Hamburger Icon -->
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-green-600 focus:outline-none p-2">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-x-0 top-0 bg-white shadow-lg py-6 px-6 z-40 hidden">
+        <div class="flex flex-col items-center space-y-8 pt-12">            
+            <a href="/#gallery" class="text-gray-800 hover:text-green-600 text-lg font-medium">Games Gallery</a>
+            <a href="/#challenge" class="text-gray-800 hover:text-green-600 text-lg font-medium">The Challenge</a>
+            <a href="/#submit" class="text-gray-800 hover:text-green-600 text-lg font-medium">Submit your Game</a>
+            <!-- Added padding top to avoid overlapping with header -->
+            <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/" target="_blank" class="inline-block bg-green-600 text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-green-700 transition duration-300">
+                GitHub
+            </a>
+        </div>
+    </div> 
+
     <header class="hero-gradient text-white pt-16 pb-16 md:pt-16 md:pb-24 text-center">
-         <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6">
             <h1 class="text-4xl sm:text-5xl md:text-6xl mb-6 font-extrabold leading-relaxed">Imprint</h1>
-         </div>
+        </div>
     </header>
 
     <main class="container mx-auto px-6 py-12 md:py-16 max-w-3xl min-h-[50vh]">
- 
-    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Information according to § 5 TMG (German Telemedia Act):</h2>
 
-    <p>
-        Deckeins UG (haftungsbeschränkt)<br>
-        Zöllnerstraße 39<br>
-        29221 Celle<br>
-        Germany
-    </p>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Information according to § 5 TMG (German Telemedia Act):</h2>
 
-    <h2>Contact:</h2>
+        <p>
+            Deckeins UG (haftungsbeschränkt)<br>
+            Zöllnerstraße 39<br>
+            29221 Celle<br>
+            Germany
+        </p>
 
-    <p class="mb-6">
-        Phone: +49 (0)152 71 06 482<br>
-        E-Mail: <a href="mailto:info@deckeins.de">info@deckeins.de</a><br>
-        Website: <a href="https://www.deckeins.de">www.deckeins.de</a>
-    </p>
- 
-    <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Umsatzsteuer-ID:</h2>
- 
-    <p>
-        Value Added Tax Identification Number according to § 27a of the Value Added Tax Act:<br>
-        DE311196219
-    </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Contact:</h2>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Register Entry:</h2>
-    <p>
-        Registered in the Commercial Register<br>
-        Register Court: Amtsgericht Lüneburg<br>
-        Register Number: HRB 206870
-    </p>
+        <p class="mb-6">
+            Phone: +49 (0)152 71 06 482<br>
+            E-Mail: <a href="mailto:info@deckeins.de">info@deckeins.de</a><br>
+            Website: <a href="https://www.deckeins.de">www.deckeins.de</a>
+        </p>
 
-    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Responsible for the content according to § 55 Abs. 2 RStV (Interstate Broadcasting Treaty):</h2>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800"">VAT ID:</h2>
 
-    <p>
-        Heike Rössing<br>
-        Zöllnerstraße 39<br>
-        29221 Celle<br>
-        Germany
-    </p>
- 
-    <h2 class="text-2xl font-semibold mb-3 text-gray-800">Copyright and License:</h2>
+        <p>
+            Value Added Tax Identification Number according to § 27a of the Value Added Tax Act:<br>
+            DE311196219
+        </p>
 
-    <p>
-        This project and its content are licensed under the MIT License. You are free to use, modify, and distribute this work in accordance with the terms of the MIT License.
-    </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800"">Register Entry:</h2>
+        <p>
+            Registered in the Commercial Register<br>
+            Register Court: Amtsgericht Lüneburg<br>
+            Register Number: HRB 206870
+        </p>
 
-    <p class="mt-4 mb-6">
-        A copy of the MIT License can be found here: <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/LICENSE" target="_blank" class="text-green-600 hover:underline font-medium">LICENSE</a>.
-    </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Responsible for the content according to § 55 Abs. 2 RStV
+            (Interstate Broadcasting Treaty):</h2>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Disclaimer for Links:</h2>
+        <p>
+            Mirko Appel<br>
+            Zöllnerstraße 39<br>
+            29221 Celle<br>
+            Germany
+        </p>
 
-    <p class="mb-6">
-        Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking.
-    </p>
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800"">Disclaimer for Links:</h2>
 
-    <p>
-        A permanent control of the content of the linked pages is not reasonable without concrete evidence of a violation of the law. If we become aware of infringements, we will remove such links immediately.
-    </p>
+        <p class="mb-6">
+            Our offer contains links to external websites of third parties, on whose contents we have no influence.
+            Therefore, we cannot assume any liability for these external contents. The respective provider or operator
+            of the pages is always responsible for the content of the linked pages. The linked pages were checked for
+            possible legal violations at the time of linking. Illegal contents were not recognizable at the time of
+            linking.
+        </p>
 
-    <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Copyright:</h2>
- 
-    <p>
- The content and works created by the site operators on these pages are subject to German copyright law. The duplication, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.
-    </p>
+        <p>
+            A permanent control of the content of the linked pages is not reasonable without concrete evidence of a
+            violation of the law. If we become aware of infringements, we will remove such links immediately.
+        </p>
 
-    <p class="mt-4">
-        Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of infringements, we will remove such content immediately.
-    </p>
+        <p class="mt-4">
+            Insofar as the content on this page was not created by the operator, the copyrights of third parties are
+            respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a
+            copyright infringement, please inform us accordingly. If we become aware of infringements, we will remove
+            such content immediately.
+        </p>
 
-    </main> 
+        <h2 class="text-2xl font-semibold mt-8 mb-4 text-gray-800"">Copyright and License:</h2>
 
-    <footer class="bg-gray-800 text-gray-400 py-12 text-center">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-left md:gap-12">
-            <div class="text-left md:col-span-1">
-                <p class="text-lg font-semibold text-green-400 leading-relaxed">
-                    For a future worth living.<br>Powered by AI.
-                </p>
-            </div>
-            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
-                <div class="mb-6 md:mb-0">
-                    <h4 class="text-white text-sm font-semibold mb-4">Content</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game" target="_blank" class="hover:text-white">GitHub Repository</a></li>
-                        <li><a href="../index.html#gallery" class="hover:text-white">Games Gallery</a></li>
-                        <li><a href="../index.html#challenge" class="hover:text-white">The Challenge</a></li>
-                        <li><a href="../index.html#submit" class="hover:text-white">Submit Game</a></li>
-                    </ul>
+        <p>
+            This project and its content are licensed under the MIT License. You are free to use, modify, and distribute
+            this work in accordance with the terms of the MIT License.
+        </p>
+
+        <p class="mt-4 mb-6">
+            A copy of the MIT License can be found here: <a
+                href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/LICENSE"
+                target="_blank" class="text-green-600 hover:underline font-medium">LICENSE</a>.
+        </p>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 items-start">
+                <div class="lg:col-span-2">
+                    <p class="text-lg font-semibold text-green-400 leading-relaxed text-center md:text-left">
+                        For a future worth living.<br> Powered by AI.
+                    </p>
                 </div>
-                <div class="mb-6 md:mb-0 text-left">
-                    <h4 class="text-white text-sm font-semibold mb-4">Partners</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="https://www.deckeins.de" target="_blank" class="hover:text-white">Deckeins</a></li>
-                        <li><a href="https://captain-ai.de/" target="_blank" class="hover:text-white">CaptainAI</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white text-sm font-semibold mb-3">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="imprint.html" class="hover:text-white">Imprint</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy (Placeholder)</a></li>
-                    </ul>
+                <div
+                    class="md:col-span-2 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 text-left md:text-left md:pl-12">
+                    <div>
+                        <h4 class="text-white font-semibold mb-3">Content</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="/#workshops"class="hover:text-white">Participant Guide</a></li>
+                            <li><a href="/#gallery" class="hover:text-white">Games Gallery</a></li>
+                            <li><a href="/#challenge" class="hover:text-white">The Challenge</a></li>
+                            <li><a href="/#submit" class="hover:text-white">Submit</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-3">Partners</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="https://www.deckeins.de" target="_blank" class="hover:text-white">Deckeins</a>
+                            </li>
+                            <li><a href="https://captain-ai.de/" target="_blank" class="hover:text-white">CaptainAI</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-3">Legal</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="imprint.html" class="hover:text-white">Imprint</a></li>
+ <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="md:col-span-3 text-center mt-8">
-                <p class="mb-2 text-sm leading-relaxed">This project is licensed under the <a href="https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/blob/main/LICENSE" target="_blank" class="underline hover:text-white font-medium">MIT License</a>.</p>
-                <p class="mb-2 text-xs leading-relaxed max-w-2xl mx-auto">Feel free to use, adapt, and share it for educational purposes, coding events, or your own projects – just give credit to Deckeins and CaptainAI and link back to this repository.</p>
-                <p class="mt-4 text-xs text-gray-500">&copy; 2025 Deckeins & CaptainAI. All rights reserved.</p>
-            </div>
-        </div>
+    </footer>
+    <script src="main.js"></script>
 </body>
+
 </html>

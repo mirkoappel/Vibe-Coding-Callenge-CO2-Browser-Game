@@ -37,11 +37,12 @@ h4, h5, h6 { font-weight: 600; } /* SemiBold für kleinere Überschriften */
     box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Weicherer Schatten */
 }
 .btn-primary {
-    background-color: #10B981; /* Tailwind green-500 */
+    /* Updated background color for primary buttons on the homepage */
+ background-color: rgb(22, 163, 74);
     color: white;
 }
 .btn-primary:hover {
-    background-color: #059669; /* Tailwind green-600 */
+ background-color: rgb(18, 137, 62); /* Slightly darker shade on hover */
 }
 .btn-outline { /* Für Hero-Bereich */
     background-color: transparent;
@@ -54,8 +55,8 @@ h4, h5, h6 { font-weight: 600; } /* SemiBold für kleinere Überschriften */
     border-color: rgba(255, 255, 255, 0.2); /* Optional: leicht dunklere Outline bei Hover */
 }
 .btn-secondary { /* Geändert von Blau zu Grün */
-    background-color: #059669; /* Tailwind green-600 */
-    color: white;
+ background-color: #059669; /* Tailwind green-600 */
+ color: white;
 }
 .btn-secondary:hover {
     background-color: #047857; /* Tailwind green-700 */
@@ -63,11 +64,7 @@ h4, h5, h6 { font-weight: 600; } /* SemiBold für kleinere Überschriften */
 
 /* Farbverlauf für Hero-Bereich - ANGEPASST */
 .hero-gradient {
-    /* Ein sanfterer, moderner Grüntonverlauf */
-    /*background: linear-gradient(to right bottom, #2f855a, #38a169, #48bb78, #68d391, #9ae6b4);*/
-    /* Alternativ ein etwas kräftigerer Verlauf:*/
-    background: linear-gradient(135deg, #276749 0%, #38A169 50%, #68D391 100%);
-    
+ background: linear-gradient(135deg, #276749 0%, #38A169 50%, #68D391 100%);
 }
 /* Hintergrund für abwechselnde Abschnitte */
 .section-bg {
@@ -180,7 +177,7 @@ code {
 
 #mobile-menu:not(.hidden) a { /* Target links directly inside #mobile-menu */
         font-size: 1.8rem !important; /* Increase font size */
-        padding: 1rem 0 !important; /* Add vertical padding */
+ /* Add vertical padding */
 }
 
 /* Adjust styling for the GitHub button specifically in the mobile menu */
