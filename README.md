@@ -2,6 +2,8 @@
 
 An interactive 3D browser game that playfully demonstrates how many trees a person would need to plant to offset their own CO₂ footprint.
 
+![Sample Solution Screenshot](https://github.com/mirkoappel/vibe-coding-challenge-co2-browser-game/raw/main/challenge/sample-solution-screenshot-01.png)
+
 This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www.deckeins.de) & [CaptainAI](https://www.captain-ai.de) – open to AI trainers, educators, developers and anyone interested in combining environmental education with creativity and artificial intelligence.
 
 **[🕹️ Play the Demo (Sample Solution)](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)**  
