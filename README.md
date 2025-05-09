@@ -6,7 +6,7 @@ This repository is part of a **VIBE Coding Challenge** by [Deckeins](https://www
 
 ---
 
-## Purpose of the VIBE Coding Challenge
+## Purpose of the Vibe Coding Challenge
 
 The **VIBE Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
 
