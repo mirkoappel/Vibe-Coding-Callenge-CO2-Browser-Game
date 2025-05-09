@@ -14,12 +14,18 @@ This repository is part of a **Vibe Coding Challenge** by [Deckeins](https://www
 
 ## Purpose of the Vibe Coding Challenge
 
-The **VIBE Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
+
 
 ---
 
 ## The Challenge
 
+The **Vibe Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
+
+**What is Vibe Coding?**  
+“Vibe Coding” is a creative approach to software development where you use the power of AI tools like ChatGPT or Gemini to brainstorm, prototype, and build digital ideas – quickly, intuitively, and with a good dose of fun.
+
+**The Challenge:** 
 Design and develop a browser game that playfully shows how many trees a person in Germany would need to plant to offset their annual CO₂ emissions – or create another original approach that makes CO₂ impact and compensation tangible and interactive.
 
 **There are no limits to creativity:**  
@@ -33,7 +39,7 @@ As inspiration, this repository includes a sample solution built with Three.js a
 In this game, players click to plant trees and reduce a CO₂ meter from 12,000 kg to 0.  
 The 3D world visually changes as progress is made – providing an **engaging and educational experience**.
 
-[🕹️ Click here to play the sample solutions](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
+[🕹️ Click here to play the game](https://mirkoappel.github.io/vibe-coding-challenge-co2-browser-game/)  
 *Fully browser-based, no registration required.*
 
 ---
