@@ -17,7 +17,7 @@ This repository is part of a Vibe Coding Challenge by [Deckeins](https://www.dec
 The **Vibe Coding Challenge** invites you to develop your own AI-supported browser game that creatively explores how large our CO₂ footprint is – and how we can reduce or even neutralize it.
 
 **What is Vibe Coding?**  
-Vibe Coding” is a creative approach to software development where you use the power of AI tools like ChatGPT or Gemini to brainstorm, prototype, and build digital ideas – quickly, intuitively, and with a good dose of fun.
+Vibe Coding” is a creative approach to software development where you use the power of AI tools to brainstorm, prototype, and build digital ideas – quickly, intuitively, and with a good dose of fun.
 
 **The Challenge:**
 Design and develop a browser game that playfully shows how many trees a person in Germany would need to plant to offset their annual CO₂ emissions – or create another original approach that makes CO₂ impact and compensation tangible and interactive.
