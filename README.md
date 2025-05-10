@@ -64,9 +64,9 @@ The 3D world visually changes as progress is made – providing an **engaging an
 
 ## Repository Structure
 
-- [`/docs/`](./docs/) – Project Website, Materials for trainers & participants (demos, guides, briefing, starter code)
-- [`/submissions/`](./submissions/) – Folder for participant submissions
-- [`README.md`](./README.md) – This file
+- [`/docs/`](./docs/) – Project Website, Materials for Trainers & Participants (Demos, Guides, Briefing, Starter code)
+- [`/submissions/`](./submissions/) – Folder for Participant Submissions
+- [`README.md`](./README.md) – This File
 
 ---
 
